@@ -7,9 +7,9 @@ from linebot.models import *
 app = Flask(__name__)
 
 # 設定你的Channel Access Token
-line_bot_api = LineBotApi('7pa0OldB+9+na48ZdbCzeruYe6Lp5PWGhXlvwAb98onFB1SRv/+KwfFo6vEprwXWNxhkdrrgsUbPsWG/27SUnjvLbj3ux/t300dEXRBri2u0iPafVoJmmbBJlVDHE3Dqc2ZxSQPUBXxn6w32UtpaNwdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('5bIeNmuHHa6OOEs4HY33siEjkHhwafDZ6pBT3K5OWUOQT1ZobzUGKKrkdvwrYeRnYYSp7+wF+mknngA/Be6+mRR5127MAz5uODPPeR93iPQSfjMhXBvw8EinMQi5vfQ7AlCunWOCPtpeJwQlrciguQdB04t89/1O/w1cDnyilFU=')
 # 設定你的Channel Secret
-handler = WebhookHandler('7fcc84652e3dd6b894f6a6762036e1d5')
+handler = WebhookHandler('7cc7637032b064de4615989200c771fb')
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -31,7 +31,7 @@ def callback():
 #接著透過LineBotApi物件中reply_message()方法，回傳相同的訊息內容
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text='Hello!!')
+    message = TextSendMessage(text='Hello!!!')
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
